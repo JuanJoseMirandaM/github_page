@@ -4,6 +4,7 @@ import App from './App';
 import User from './components/User';
 import Repository from './components/Repository';
 import Nav from './components/Nav';
+import UserDetail from './components/UserDetail';
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
       <Switch>
         <Route path="/" exact render={ props => <App {...props} />} />
         <Route path="/user" exact render={ props => <User {...props} />} />
+        <Route path="/user/:username" exact render={ props => <UserDetail {...props} />} />
         <Route path="/repository" exact render={ props => <Repository {...props} />} />
         <Redirect to="/" />
       </Switch>
