@@ -3,6 +3,11 @@ import React from 'react';
 const Repos = ({repo}) => {
   const {name, html_url, stargazers_count, watchers_count, forks_count, description, language, updated_at} = repo;
 
+  function formatDate(string){
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+  }
+
   return (
     <div>
       <div className="card card-body mb-2">
@@ -36,7 +41,7 @@ const Repos = ({repo}) => {
               </span>):(<></>)}
             <span className="mr-3">
               <i className="fas fa-clock"></i>
-              <span> {updated_at}</span>
+              <span> Update {formatDate(updated_at)}</span>
             </span>
           </div>
         </div>

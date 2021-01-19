@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import Profile from './Profile';
-import Repos from './Repos';
+import Profile from '../components/Profile';
+import Repos from '../components/Repos';
 
 const UserDetail = ({match}) => {
   

@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Profile = ({user}) => {
-  const {avatar_url, login, html_url, public_repos, name, public_gists, followers, following, company, blog, location, created_at} = user
+  const {avatar_url, login, html_url, public_repos, name, public_gists, followers, following, company, blog, location, created_at} = user;
+
+  function formatDate(string){
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+  }
+  
   return (
     <div className="card card-body mb-3">
       <div className="row">
@@ -19,7 +25,7 @@ const Profile = ({user}) => {
           >Mas informacion</a>
         </div>
         <div className="col-12 col-md-8">
-          <h2>{name}</h2>
+          <h2>{name!=null?name:login}</h2>
           <span className="badge badge-primary mr-1">
             Public Repos: {public_repos}
           </span>
@@ -37,7 +43,7 @@ const Profile = ({user}) => {
             <div className="list-group-item"><h5>Company:</h5> {company}</div>
             <div className="list-group-item"><h5>Website/blog:</h5> <a href={blog} target="_blank" rel="noreferrer">{blog}</a></div>
             <div className="list-group-item"><h5>Location:</h5> {location}</div>
-            <div className="list-group-item"><h5>Member Since:</h5> {created_at}</div>
+            <div className="list-group-item"><h5>Member Since:</h5>{formatDate(created_at)}</div>
           </div>
         </div>
       </div>
