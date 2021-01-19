@@ -29,8 +29,14 @@ const User = () => {
     <div className="container">
       <h1 className="mt-5">Buscar usuario</h1>
       <Search searchUsers={searchUsers}/>
-      
-      
+      <div className="row justify-content-center m-auto">
+        {users.map(user => (
+          <UserItem
+            key={user.id}
+            user={user}
+          />
+        ))}
+      </div>
     </div>
   );
 }
