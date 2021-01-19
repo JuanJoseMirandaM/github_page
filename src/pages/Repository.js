@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import Search from '../components/Search';
-import Repos from '../components/Repos';
+import RepoItem from '../components/RepoItem';
 import PageLoading from '../components/PageLoading';
 
 const Repository = () => {
@@ -14,7 +14,7 @@ const Repository = () => {
     // console.log(query)
     axios
       .get(
-        `https://api.github.com/search/repositories?q=${query}&per_page=20`
+        `https://api.github.com/search/repositories?q=${query}&per_page=10&page=1`
       )
       .then(res => {
         // console.log(res.data.items)
@@ -33,14 +33,14 @@ const Repository = () => {
       <Search searchQuery={searchRepositories} placeholder="Github repositories..."/>
       {loading && <PageLoading />}
       {!loading && repositories.length === 0 && <h5>Sin resultados</h5>}
-      <div className="row justify-content-center m-auto">
+      <ul>
       {repositories.map(repo => (
-        <Repos 
+        <RepoItem
           key={repo.id} 
           repo={repo} 
         />
       ))}
-      </div>
+      </ul>
     </div>
   )
 }

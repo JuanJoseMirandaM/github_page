@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.f4{
+  font-size: 16px!important;
+}
+
 .f6{
   font-size: 12px!important;
 }
