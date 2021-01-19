@@ -31,7 +31,9 @@ const User = () => {
   return (
     <div className="container">
       <h1 className="mt-5">Buscar usuario</h1>
-      <Search searchUsers={searchUsers}/>
+      <Search searchQuery={searchUsers} placeholder="Github username..."/>
+      {loading && <PageLoading />}
+      {!loading && users.length === 0 && <h5>Sin resultados</h5>}
       <div className="row justify-content-center m-auto">
         {users.map(user => (
           <UserItem
@@ -40,8 +42,6 @@ const User = () => {
           />
         ))}
       </div>
-      {loading && <PageLoading />}
-      {!loading && users.length === 0 && <h2>Sin resultados</h2>}
     </div>
   );
 }

@@ -28,7 +28,10 @@ const UserDetail = ({match}) => {
       <Profile user={user}/>
       <h3 className="mb-3 mt-3">Repos mas recientes</h3>
       {repos.map(repo => (
-        <Repos key={repo.id} repo={repo} />
+        <Repos 
+          key={repo.id} 
+          repo={repo} 
+        />
       ))}
     </div>
   )
