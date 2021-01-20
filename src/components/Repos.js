@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Repos = ({repo}) => {
-  const {name, html_url, stargazers_count, watchers_count, forks_count, description, language, updated_at, archived, full_name} = repo;
+  const {name, html_url, stargazers_count, watchers_count, forks_count, description, language, updated_at, archived} = repo;
 
   function formatDate(string){
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -18,7 +18,7 @@ const Repos = ({repo}) => {
         <div className="col-10 col-md-9">
           <h5 className="mb-1">
             <a href={html_url} target="_blank" rel="noopener noreferrer">
-              {full_name}
+              {name}
             </a>
             {archived && <span className="f6 badge badge-secondary ml-1">Archived</span>}
           </h5>
@@ -39,15 +39,21 @@ const Repos = ({repo}) => {
           </div>
         </div>
         <div className="col-md-3">
-          <span className="badge badge-warning mr-1">
-            Star: {kFormatter(stargazers_count)}
-          </span>
-          <span className="badge badge-success mr-1">
-            Watchers: {kFormatter(watchers_count)}
-          </span>
-          <span className="badge badge-dark mr-1">
-            Fork: {kFormatter(forks_count)}
-          </span>
+          <div className="col-12">
+            <span className="badge badge-warning mr-1">
+              Star: {kFormatter(stargazers_count)}
+            </span>
+          </div>
+          <div className="col-12">
+            <span className="badge badge-success mr-1">
+              Watchers: {kFormatter(watchers_count)}
+            </span>
+          </div>
+          <div className="col-12">
+            <span className="badge badge-dark mr-1">
+              Fork: {kFormatter(forks_count)}
+            </span>
+          </div>
         </div>
       </div>
     </div>

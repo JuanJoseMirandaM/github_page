@@ -4,8 +4,6 @@ import Search from '../components/Search';
 import UserItem from '../components/UserItem';
 import PageLoading from '../components/PageLoading';
 
-
-
 const User = () => {
   const [loading, setLoading] = useState(false);
   
@@ -24,7 +22,8 @@ const User = () => {
         setLoading(false)
       })
       .catch(err => {
-        console.log(err.response)
+        // console.log(err.response)
+        setLoading(false)
       })
   }
 

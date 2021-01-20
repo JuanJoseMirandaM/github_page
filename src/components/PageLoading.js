@@ -6,7 +6,7 @@ import './PageLoading.css';
 const PageLoading = () => {
   return (
     <div className="PageLoading">
-      {/* <Loader /> */}
+      <Loader />
       <h4>Cargando...</h4>
     </div>
   )

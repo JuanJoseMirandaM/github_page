@@ -2,7 +2,7 @@ import React from 'react';
 import './RepoItem.css';
 
 const RepoItem = ({repo}) => {
-  const {name, html_url, stargazers_count, watchers_count, forks_count, description, language, updated_at, archived, full_name} = repo;
+  const {html_url, stargazers_count, description, language, updated_at, archived, full_name} = repo;
 
   function formatDate(string){
     var options = { year: 'numeric', month: 'long', day: 'numeric' };

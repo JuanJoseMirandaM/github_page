@@ -22,6 +22,7 @@ const Search = ({searchQuery, placeholder}) => {
             placeholder={placeholder}
             onChange={search}
             value={query}
+            required={true}
           />
           <InputGroupAddon addonType="prepend">
             <Button type="submit" color="success">Buscar</Button>
