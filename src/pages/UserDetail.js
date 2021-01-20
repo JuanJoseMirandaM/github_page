@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import { Alert } from 'reactstrap';
 import Profile from '../components/Profile';
 import Repos from '../components/Repos';
 
